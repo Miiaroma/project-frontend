@@ -22,10 +22,10 @@ const AddProject = () => {
             place: place
         }
         axios.post(apiURL + '/project/', data, {
-            /*auth: {
-                username:localStorage.getItem('username'),
+            auth: {
+                id_person:localStorage.getItem('id_person'),
                 password:localStorage.getItem('password')
-            }*/
+            }
         })
             .then(res => {
                 setIdproject('');

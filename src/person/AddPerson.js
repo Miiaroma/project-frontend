@@ -14,6 +14,7 @@ const AddPerson = () => {
     const [city, setCity] = useState('');
     const [birth_year, setBirthyear] = useState('');
     const [salary, setSalary] = useState('');
+    const [password, setPassword] = useState('');
     
     const navigate = useNavigate();
 
@@ -26,13 +27,14 @@ const AddPerson = () => {
             lastname: lastname,
             city: city,
             birth_year: birth_year,
-            salary: salary
+            salary: salary,
+            password: password
         }
         axios.post(apiURL + '/person/', data, {
-            /*auth: {
-                username:localStorage.getItem('username'),
+            auth: {
+                id_person:localStorage.getItem('id_person'),
                 password:localStorage.getItem('password')
-            }*/
+            }
         })
             .then(res => {
                 setIdperson('');
@@ -41,6 +43,7 @@ const AddPerson = () => {
                 setCity('');
                 setBirthyear('');
                 setSalary('');
+                setPassword('');
                              
                 setLoading(false);
                 return navigate("/personlist");
@@ -55,12 +58,13 @@ const AddPerson = () => {
             <table className='table table-bordered'>
                 <thead>
                     <tr className='table-info'>
-                    <th>Person Id</th><th>First Name</th><th>Last Name</th><th>City</th><th>Birth Year</th><th>Salary</th>                        
+                    <th>Person Id</th><th>Password</th><th>First Name</th><th>Last Name</th><th>City</th><th>Birth Year</th><th>Salary</th>                        
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td><input type="number" min="1" id="idperson" placeholder='idperson' onChange={e => setIdperson(e.target.value)} /></td>                        
+                        <td><input type="text" id="password" placeholder='password' onChange={e => setPassword(e.target.value)} /></td>
                         <td><input type="text" id="firstname" placeholder='firstname' onChange={e => setFirstname(e.target.value)} /></td>
                         <td><input type="text" id="lastname" placeholder='lastname' onChange={e => setLastname(e.target.value)} /></td>
                         <td><input type="number" id="birthyear" placeholder='birthyear' onChange={e => setBirthyear(e.target.value)} /></td>

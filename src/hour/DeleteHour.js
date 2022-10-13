@@ -21,10 +21,10 @@ const DeleteHour = (props) => {
             try {
                 console.log("id="+id);
                 const { data: response } = await axios.get(apiURL + '/hour/'+id, {
-                    /*auth: {
-                        username:localStorage.getItem('username'),
+                    auth: {
+                        id_person:localStorage.getItem('id_person'),
                         password:localStorage.getItem('password')
-                    }*/
+                    }
                 })
                 setIdhour(id);
                 setIdproject(response.id_project);
@@ -49,10 +49,10 @@ const DeleteHour = (props) => {
             work_hour: work_hour            
         }
         axios.delete(apiURL + '/hour/'+id, {
-            /*auth: {
-                username:localStorage.getItem('username'),
+            auth: {
+                id_person:localStorage.getItem('id_person'),
                 password:localStorage.getItem('password')
-            }*/
+            }
         })
             .then(res => {
                 setIdhour('');

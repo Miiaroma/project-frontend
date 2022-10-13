@@ -14,6 +14,7 @@ const SelectedPerson = (props) => {
 	const [city, setCity] = useState('');
     const [birth_year, setBirthyear] = useState('');
     const [salary, setSalary] = useState('');
+    const [password, setPassword] = useState('');
 	
     const navigate = useNavigate();
     const {id}=useParams();
@@ -25,10 +26,10 @@ const SelectedPerson = (props) => {
             try {
                 console.log("id="+id);
                 const { data: response } = await axios.get(apiURL + '/person/'+id, {
-                    /*auth: {
-                        useriduser:localStorage.getItem('useriduser'),
+                    auth: {
+                        id_person:localStorage.getItem('id_person'),
                         password:localStorage.getItem('password')
-                    }*/
+                    }
                 })
                 setIdperson(id);
                 console.log(response.id_person);
@@ -38,6 +39,7 @@ const SelectedPerson = (props) => {
                 setCity(response.city);
                 setBirthyear(response.birth_year);
                 setSalary(response.salary);
+                setPassword(response.password);
                 console.log(response);
             } catch (error) {
                 console.error(error.message);
@@ -56,15 +58,16 @@ const SelectedPerson = (props) => {
             lastname:lastname ? lastname : null,
             city: city,
             birth_year: birth_year,           
-            salary:salary
+            salary:salary,
+            password:password
 
         }
         console.log(data);
         axios.put(apiURL + '/person/'+id, data, {
-            /*auth: {
-                username:localStorage.getItem('username'),
+            auth: {
+                id_person:localStorage.getItem('id_person'),
                 password:localStorage.getItem('password')
-            }*/
+            }
         })
             .then(res => {
                 setIdperson('');
@@ -73,6 +76,7 @@ const SelectedPerson = (props) => {
                 setCity('');
                 setBirthyear('');
                 setSalary('');
+                setPassword('');
 
                 setLoading(false);
                 return navigate("/personlist");
@@ -87,12 +91,13 @@ const SelectedPerson = (props) => {
             <table className='table table-bordered'>
                 <thead>
                     <tr className='table-info'>
-                        <th>Person Id</th><th>First Name</th><th>Last Name</th><th>City</th><th>Birth Year</th><th>Salary</th><th></th>                        
+                        <th>Person Id</th><th>Password</th><th>First Name</th><th>Last Name</th><th>City</th><th>Birth Year</th><th>Salary</th><th></th>                        
                     </tr>
                 </thead>
                     <tbody>
                         <tr>
                         <td><input type="number" id="idperson" value={id} onChange={e => setIdperson(e.target.value)} /></td>                       
+                        <td><input type="text" id="password" value={password} onChange={e => setPassword(e.target.value)} /></td>
                         <td><input type="text" id="firstname" value={firstname} onChange={e => setFirstname(e.target.value)} /></td>
                         <td><input type="text" id="lastname" value={lastname} onChange={e => setLastname(e.target.value)} /></td>
                         <td><input type="number" id="birthyear" value={birth_year} onChange={e => setBirthyear(e.target.value)} /></td>

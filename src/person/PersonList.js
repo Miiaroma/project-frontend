@@ -13,10 +13,10 @@ const PersonList = () => {
         setLoading(true);
         setIsError(false);
         axios.get(apiURL + '/person',{
-        /*auth: {
-            username:localStorage.getItem('username'),
+        auth: {
+            id_person:localStorage.getItem('id_person'),
             password:localStorage.getItem('password')
-        }*/
+        }
         })
             .then(res => {
                 console.log(res.data);
@@ -40,18 +40,19 @@ const PersonList = () => {
             <table className='table table-bordered table-hover'>
                 <thead>
                     <tr className='table-info'>
-                    <th>Person Id</th><th>First Name</th><th>Last Name</th><th>City</th><th>Birth Year</th><th>Salary</th><th>Select</th><th>Delete</th>
+                    <th>Person Id</th><th>Password</th><th>First Name</th><th>Last Name</th><th>City</th><th>Birth Year</th><th>Salary</th><th>Select</th><th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
                     {data.map(person => (
                         <tr key={person.id_person}>
                             <td>{person.id_person}</td>
+                            <td>{person.password}</td>
                             <td>{person.firstname ? person.firstname : null}</td>
                             <td>{person.lastname ? person.lastname : null}</td>                             
                             <td>{person.city}</td>
                             <td>{person.birth_year}</td>
-                            <td>{person.salary}</td>
+                            <td>{person.salary}</td>                            
                            
                             <td><NavLink to={`selectedperson/${person.id_person}`}>
                                 <button className="btn btn-primary">Select({person.id_person})</button>

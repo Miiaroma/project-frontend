@@ -20,10 +20,10 @@ const DeleteProject = (props) => {
             try {
                 console.log("id="+id);
                 const { data: response } = await axios.get(apiURL + '/project/'+id, {
-                    /*auth: {
-                        username:localStorage.getItem('username'),
+                    auth: {
+                        id_person:localStorage.getItem('id_person'),
                         password:localStorage.getItem('password')
-                    }*/
+                    }
                 })
                 setIdproject(id);
                 setPname(response.pname);
@@ -46,10 +46,10 @@ const DeleteProject = (props) => {
             place: place
         }
         axios.delete(apiURL + '/project/'+id, {
-            /*auth: {
-                username:localStorage.getItem('username'),
+            auth: {
+                id_person:localStorage.getItem('id_person'),
                 password:localStorage.getItem('password')
-            }*/
+            }
         })
             .then(res => {
                 setIdproject('');

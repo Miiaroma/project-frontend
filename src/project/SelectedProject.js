@@ -21,10 +21,10 @@ const SelectedProject = (props) => {
             try {
                 console.log("id="+id);
                 const { data: response } = await axios.get(apiURL + '/project/'+id, {
-                    /*auth: {
-                        useridstudent:localStorage.getItem('useridstudent'),
+                    auth: {
+                        id_person:localStorage.getItem('id_person'),
                         password:localStorage.getItem('password')
-                    }*/
+                    }
                 })
                 setIdproject(id);
                 console.log(response.id_project);
@@ -51,10 +51,10 @@ const SelectedProject = (props) => {
         console.log("TEST");
         console.log(data);
         axios.put(apiURL + '/project/'+id, data, {
-            /*auth: {
-                username:localStorage.getItem('username'),
+            auth: {
+                id_user:localStorage.getItem('id_user'),
                 password:localStorage.getItem('password')
-            }*/
+            }
         })
             .then(res => {
                 setIdproject('');

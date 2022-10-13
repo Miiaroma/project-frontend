@@ -1,4 +1,5 @@
 import './App.css';
+import Login from './Login';
 import PersonList from './person/PersonList';
 import AddPerson from './person/AddPerson';
 import SelectedPerson from './person/SelectedPerson';
@@ -19,7 +20,7 @@ function App() {
 <Router>
       <div>
         <ul>
-          
+          <li> <Link to="/login">Login</Link>  </li>
           <li> <Link to="/personlist">Persons</Link>  </li>
           <li> <Link to="/projectlist">Projects</Link>  </li>
           <li> <Link to="/hourlist">Hours</Link>  </li>
@@ -28,7 +29,7 @@ function App() {
         <hr />
       </div>
       <Routes>
-        
+        <Route exact path="/login" element={<Login/>} />
         <Route exact path="/personlist" element={<PersonList/>} />
         <Route exact path="/personlist/selectedperson/:id" element={<SelectedPerson/>} />
         <Route exact path="/personlist/deleteperson/:id" element={<DeletePerson/>} />

@@ -22,10 +22,10 @@ const SelectedHour = (props) => {
             try {
                 console.log("id="+id);
                 const { data: response } = await axios.get(apiURL + '/hour/'+id, {
-                    /*auth: {
-                        useridstudent:localStorage.getItem('useridstudent'),
+                    auth: {
+                        id_person:localStorage.getItem('id_person'),
                         password:localStorage.getItem('password')
-                    }*/
+                    }
                 })
                 setIdhour(id);
                 console.log(response.id_hour);
@@ -54,10 +54,10 @@ const SelectedHour = (props) => {
         console.log("TEST");
         console.log(data);
         axios.put(apiURL + '/hour/'+id, data, {
-            /*auth: {
-                username:localStorage.getItem('username'),
+            auth: {
+                id_person:localStorage.getItem('id_person'),
                 password:localStorage.getItem('password')
-            }*/
+            }
         })
             .then(res => {
                 setIdhour('');

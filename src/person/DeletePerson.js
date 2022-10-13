@@ -13,7 +13,9 @@ const DeletePerson = (props) => {
     const [lastname, setLastname] = useState('');
     const [city, setCity] = useState('');
     const [birth_year, setBirthyear] = useState('');
-    const [salary, setSalary] = useState('');   
+    const [salary, setSalary] = useState('');  
+    const [password, setPassword] = useState('');
+
     const {id}=useParams();
     const navigate = useNavigate();
     useEffect(() => {
@@ -23,10 +25,10 @@ const DeletePerson = (props) => {
             try {
                 console.log("id="+id);
                 const { data: response } = await axios.get(apiURL + '/person/'+id, {
-                    /*auth: {
-                        username:localStorage.getItem('username'),
+                    auth: {
+                        id_person:localStorage.getItem('id_person'),
                         password:localStorage.getItem('password')
-                    }*/
+                    }
                 })
                     
                 setIdperson(id);

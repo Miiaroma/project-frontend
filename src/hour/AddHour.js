@@ -24,10 +24,10 @@ const AddHour = () => {
             work_hour: work_hour            
         }
         axios.post(apiURL + '/hour/', data, {
-            /*auth: {
-                username:localStorage.getItem('username'),
+            auth: {
+                id_person:localStorage.getItem('id_person'),
                 password:localStorage.getItem('password')
-            }*/
+            }
         })
             .then(res => {
                 setIdhour('');
