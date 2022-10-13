@@ -55,17 +55,17 @@ const AddPerson = () => {
             <table className='table table-bordered'>
                 <thead>
                     <tr className='table-info'>
-                    <th>id_person</th><th>firstname</th><th>lastname</th><th>city</th><th>birth_year</th><th>salary</th>                        
+                    <th>Person Id</th><th>First Name</th><th>Last Name</th><th>City</th><th>Birth Year</th><th>Salary</th>                        
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><input type="text" id="idperson" placeholder='iduser' onChange={e => setIdperson(e.target.value)} /></td>                        
+                        <td><input type="number" min="1" id="idperson" placeholder='idperson' onChange={e => setIdperson(e.target.value)} /></td>                        
                         <td><input type="text" id="firstname" placeholder='firstname' onChange={e => setFirstname(e.target.value)} /></td>
                         <td><input type="text" id="lastname" placeholder='lastname' onChange={e => setLastname(e.target.value)} /></td>
-                        <td><input type="text" id="birthyear" placeholder='birthyear' onChange={e => setBirthyear(e.target.value)} /></td>
+                        <td><input type="number" id="birthyear" placeholder='birthyear' onChange={e => setBirthyear(e.target.value)} /></td>
                         <td><input type="text" id="city" placeholder='city' onChange={e => setCity(e.target.value)} /></td>
-                        <td><input type="text" id="salary" placeholder='salary' onChange={e => setSalary(e.target.value)} /></td>
+                        <td><input type="number" id="salary" placeholder='salary' onChange={e => setSalary(e.target.value)} /></td>
                         
                     </tr>
                 </tbody>

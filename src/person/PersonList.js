@@ -40,20 +40,19 @@ const PersonList = () => {
             <table className='table table-bordered table-hover'>
                 <thead>
                     <tr className='table-info'>
-                    <th>id_person</th><th>firstname</th><th>lastname</th><th>city</th><th>birth_year</th><th>salary</th><th>Select</th><th>Delete</th>
+                    <th>Person Id</th><th>First Name</th><th>Last Name</th><th>City</th><th>Birth Year</th><th>Salary</th><th>Select</th><th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
                     {data.map(person => (
                         <tr key={person.id_person}>
                             <td>{person.id_person}</td>
-                            <td>{person.firstname}</td>
-                            <td>{person.lastname}</td>
+                            <td>{person.firstname ? person.firstname : null}</td>
+                            <td>{person.lastname ? person.lastname : null}</td>                             
                             <td>{person.city}</td>
                             <td>{person.birth_year}</td>
                             <td>{person.salary}</td>
-                            <td>{person.firstname ? person.firstname : null}</td>
-                            <td>{person.lastname ? person.lastname : null}</td> 
+                           
                             <td><NavLink to={`selectedperson/${person.id_person}`}>
                                 <button className="btn btn-primary">Select({person.id_person})</button>
                                 </NavLink>

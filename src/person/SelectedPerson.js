@@ -87,17 +87,17 @@ const SelectedPerson = (props) => {
             <table className='table table-bordered'>
                 <thead>
                     <tr className='table-info'>
-                        <th>id_person</th><th>firstname</th><th>lastname</th><th>city</th><th>birth_year</th><th>salary</th><th></th>                        
+                        <th>Person Id</th><th>First Name</th><th>Last Name</th><th>City</th><th>Birth Year</th><th>Salary</th><th></th>                        
                     </tr>
                 </thead>
                     <tbody>
                         <tr>
-                        <td><input type="text" id="idperson" value={id} onChange={e => setIdperson(e.target.value)} /></td>                       
+                        <td><input type="number" id="idperson" value={id} onChange={e => setIdperson(e.target.value)} /></td>                       
                         <td><input type="text" id="firstname" value={firstname} onChange={e => setFirstname(e.target.value)} /></td>
                         <td><input type="text" id="lastname" value={lastname} onChange={e => setLastname(e.target.value)} /></td>
-                        <td><input type="text" id="birthyear" value={birth_year} onChange={e => setBirthyear(e.target.value)} /></td>
+                        <td><input type="number" id="birthyear" value={birth_year} onChange={e => setBirthyear(e.target.value)} /></td>
                         <td><input type="text" id="city" value={city} onChange={e => setCity(e.target.value)} /></td>
-                        <td><input type="text" id="salary" value={salary} onChange={e => setSalary(e.target.value)} /></td>
+                        <td><input type="number" id="salary" value={salary} onChange={e => setSalary(e.target.value)} /></td>
                         <td><button type="submit" className='btn btn-primary' onClick={handleSubmit}  disabled={loading}>Update</button></td>
                         </tr>
                     
