@@ -102,8 +102,8 @@ const SelectedPerson = (props) => {
                         <td><input type="number" id="birthyear" value={birth_year} onChange={e => setBirthyear(e.target.value)} /></td>
                         <td><input type="text" id="city" value={city} onChange={e => setCity(e.target.value)} /></td>
                         <td><input type="number" id="salary" value={salary} onChange={e => setSalary(e.target.value)} /></td>
-                        <td><button type="submit" className='btn btn-primary' onClick={handleSubmit}  disabled={loading}>Update</button></td>
                         <td><input type="text" id="password" value={password} onChange={e => setPassword(e.target.value)} /></td>
+                        <td><button type="submit" className='btn btn-primary' onClick={handleSubmit}  disabled={loading}>Update</button></td>                        
                         </tr>
                     
                     </tbody>

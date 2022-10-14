@@ -66,8 +66,8 @@ const AddPerson = () => {
                         <td><input type="number" min="1" id="idperson" placeholder='idperson' onChange={e => setIdperson(e.target.value)} /></td>                       
                         <td><input type="text" id="firstname" placeholder='firstname' onChange={e => setFirstname(e.target.value)} /></td>
                         <td><input type="text" id="lastname" placeholder='lastname' onChange={e => setLastname(e.target.value)} /></td>
-                        <td><input type="number" id="birthyear" placeholder='birthyear' onChange={e => setBirthyear(e.target.value)} /></td>
                         <td><input type="text" id="city" placeholder='city' onChange={e => setCity(e.target.value)} /></td>
+                        <td><input type="number" id="birthyear" placeholder='birthyear' onChange={e => setBirthyear(e.target.value)} /></td>
                         <td><input type="number" id="salary" placeholder='salary' onChange={e => setSalary(e.target.value)} /></td>
                         <td><input type="text" id="password" placeholder='password' onChange={e => setPassword(e.target.value)} /></td>
                     </tr>
