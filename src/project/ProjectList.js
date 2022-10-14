@@ -14,7 +14,7 @@ const ProjectList = () => {
         setIsError(false);
         axios.get(apiURL + '/project',{
         auth: {
-            id_person:localStorage.getItem('id_person'),
+            id_person:localStorage.getItem('idperson'),
             password:localStorage.getItem('password')
         }
         })

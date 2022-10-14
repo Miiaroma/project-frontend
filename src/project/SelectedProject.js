@@ -52,7 +52,7 @@ const SelectedProject = (props) => {
         console.log(data);
         axios.put(apiURL + '/project/'+id, data, {
             auth: {
-                id_user:localStorage.getItem('id_user'),
+                id_user:localStorage.getItem('iduser'),
                 password:localStorage.getItem('password')
             }
         })

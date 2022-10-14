@@ -22,7 +22,7 @@ const DeleteHour = (props) => {
                 console.log("id="+id);
                 const { data: response } = await axios.get(apiURL + '/hour/'+id, {
                     auth: {
-                        id_person:localStorage.getItem('id_person'),
+                        id_person:localStorage.getItem('idperson'),
                         password:localStorage.getItem('password')
                     }
                 })
@@ -50,7 +50,7 @@ const DeleteHour = (props) => {
         }
         axios.delete(apiURL + '/hour/'+id, {
             auth: {
-                id_person:localStorage.getItem('id_person'),
+                id_person:localStorage.getItem('idperson'),
                 password:localStorage.getItem('password')
             }
         })

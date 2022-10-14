@@ -23,7 +23,7 @@ const AddProject = () => {
         }
         axios.post(apiURL + '/project/', data, {
             auth: {
-                id_person:localStorage.getItem('id_person'),
+                id_person:localStorage.getItem('idperson'),
                 password:localStorage.getItem('password')
             }
         })

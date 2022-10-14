@@ -30,7 +30,7 @@ function Login() {
                 }
                 else {
                     setDatabaseError('Kirjautuminen onnistui');
-                    localStorage.setItem('id_person',id_person);
+                    localStorage.setItem('idperson',id_person);
                     localStorage.setItem('password',password);
                 }
             }).catch(err => {
@@ -43,10 +43,10 @@ function Login() {
         <div className="container">
             <div >
                 <div className='form-group'>
-                    <label htmlFor="id_person">id_person </label>
+                    <label htmlFor="idperson">idperson </label>
                     <input className='form-control'
                         type="text"
-                        id="id_person"
+                        id="idperson"
                         value={id_person}
                         onChange={e => setIdperson(e.target.value)} />
                 </div>

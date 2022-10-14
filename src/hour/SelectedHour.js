@@ -23,7 +23,7 @@ const SelectedHour = (props) => {
                 console.log("id="+id);
                 const { data: response } = await axios.get(apiURL + '/hour/'+id, {
                     auth: {
-                        id_person:localStorage.getItem('id_person'),
+                        id_person:localStorage.getItem('idperson'),
                         password:localStorage.getItem('password')
                     }
                 })
@@ -55,7 +55,7 @@ const SelectedHour = (props) => {
         console.log(data);
         axios.put(apiURL + '/hour/'+id, data, {
             auth: {
-                id_person:localStorage.getItem('id_person'),
+                id_person:localStorage.getItem('idperson'),
                 password:localStorage.getItem('password')
             }
         })

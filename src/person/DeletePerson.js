@@ -26,7 +26,7 @@ const DeletePerson = (props) => {
                 console.log("id="+id);
                 const { data: response } = await axios.get(apiURL + '/person/'+id, {
                     auth: {
-                        id_person:localStorage.getItem('id_person'),
+                        id_person:localStorage.getItem('idperson'),
                         password:localStorage.getItem('password')
                     }
                 })

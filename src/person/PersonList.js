@@ -14,7 +14,7 @@ const PersonList = () => {
         setIsError(false);
         axios.get(apiURL + '/person',{
         auth: {
-            id_person:localStorage.getItem('id_person'),
+            id_person:localStorage.getItem('idperson'),
             password:localStorage.getItem('password')
         }
         })
@@ -40,14 +40,13 @@ const PersonList = () => {
             <table className='table table-bordered table-hover'>
                 <thead>
                     <tr className='table-info'>
-                    <th>Person Id</th><th>Password</th><th>First Name</th><th>Last Name</th><th>City</th><th>Birth Year</th><th>Salary</th><th>Select</th><th>Delete</th>
+                    <th>Person Id</th><th>First Name</th><th>Last Name</th><th>City</th><th>Birth Year</th><th>Salary</th><th>Select</th><th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
                     {data.map(person => (
                         <tr key={person.id_person}>
-                            <td>{person.id_person}</td>
-                            <td>{person.password}</td>
+                            <td>{person.id_person}</td>                           
                             <td>{person.firstname ? person.firstname : null}</td>
                             <td>{person.lastname ? person.lastname : null}</td>                             
                             <td>{person.city}</td>

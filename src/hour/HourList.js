@@ -14,7 +14,7 @@ const HourList = () => {
         setIsError(false);
         axios.get(apiURL + '/hour',{
         auth: {
-            id_person:localStorage.getItem('id_person'),
+            id_person:localStorage.getItem('idperson'),
             password:localStorage.getItem('password')
         }
         })
