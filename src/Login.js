@@ -17,7 +17,7 @@ function Login() {
         axios.post(apiURL + '/login', {id_person,password}, {
         })
             .then(res => {
-                //setIdperson('');
+                setIdperson('');
                 setPassword('');
                 setLoading(false);
                 console.log(res.data);

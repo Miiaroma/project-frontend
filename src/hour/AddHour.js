@@ -52,7 +52,7 @@ const AddHour = () => {
                 </thead>
                 <tbody>
                     <tr>
-                        <td><input type="number" min="1" id="idphour" placeholder='idhourt' onChange={e => setIdproject(e.target.value)} /></td>
+                        <td><input type="number" min="1" id="idhour" placeholder='idhour' onChange={e => setIdproject(e.target.value)} /></td>
                         <td><input type="number" min="1" id="idproject" placeholder='idproject' onChange={e => setIdproject(e.target.value)} /></td>
                         <td><input type="number" min="1" id="idperson" placeholder='idperson' onChange={e => setIdperson(e.target.value)} /></td>
                         <td><input type="number" id="workhour" placeholder='workhour' onChange={e => setWorkhour(e.target.value)} /></td>                        
