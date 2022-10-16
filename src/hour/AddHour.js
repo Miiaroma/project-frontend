@@ -11,7 +11,7 @@ const AddHour = () => {
     const [id_hour, setIdhour] = useState('');
     const [id_project, setIdproject] = useState('');
     const [id_person, setIdperson] = useState('');
-    const [work_hour, setWorkhour] = useState('');
+    const [work_hour, setWorkhour] = useState('');    
     const navigate = useNavigate();
 
     const handleSubmit = () => {

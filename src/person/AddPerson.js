@@ -20,7 +20,7 @@ const AddPerson = () => {
 
     const handleSubmit = () => {
         setLoading(true);
-        setIsError(false);
+        setIsError(false); 
         const data = {
             id_person: id_person,            
             firstname: firstname,

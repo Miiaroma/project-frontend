@@ -37,6 +37,7 @@ const DeletePerson = (props) => {
                 setCity(response.city);
                 setBirthyear(response.birth_year);                
                 setSalary(response.salary);
+                setPassword(response.password);
                 console.log(response);
             } catch (error) {
                 console.error(error.message);
@@ -55,13 +56,14 @@ const DeletePerson = (props) => {
             lastname: lastname ? lastname : null,
             city: city,
             birth_year: birth_year,
-            salary: salary            
+            salary: salary,
+            password: password            
         }
         axios.delete(apiURL + '/person/'+id, {
-            /*auth: {
+            auth: {
                 username:localStorage.getItem('username'),
                 password:localStorage.getItem('password')
-            }*/
+            }
         })
             .then(res => {
                 setIdperson('');
@@ -70,6 +72,7 @@ const DeletePerson = (props) => {
                 setCity('');
                 setBirthyear('');
                 setSalary('');
+                setPassword('');
                 setLoading(false);
                 return navigate("/personlist");
             }).catch(err => {
