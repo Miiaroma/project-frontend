@@ -1,3 +1,3 @@
-const apiURL="https://localhost:7174/api";
+const apiURL="http://localhost:5000/api";
 
 export default apiURL;

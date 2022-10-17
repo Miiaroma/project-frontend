@@ -11,6 +11,9 @@ function Login() {
     const [databaseError, setDatabaseError] = useState(false);
 
     const handleSubmit = () => {
+        console.log("Handle submit"+apiURL);
+        console.log(id_person);
+        console.log(password);
         setLoading(true);
         setIsError(false);
         window.localStorage.clear();
@@ -26,10 +29,11 @@ function Login() {
                     setDatabaseError('Virhe tietokantayhteydessä');
                 }
                 else if(res.data===false){
+                    console.log("testi1");
                     setDatabaseError('Tunnus ja salasana eivät täsmää');
                 }
                 else {
-                    setDatabaseError('Kirjautuminen onnistui');
+                    setDatabaseError('Login was successful');
                     localStorage.setItem('idperson',id_person);
                     localStorage.setItem('password',password);
                 }
@@ -46,7 +50,7 @@ function Login() {
                     <label htmlFor="idperson">idperson </label>
                     <input className='form-control'
                         type="text"
-                        id="idperson"
+                        id="id_person"
                         value={id_person}
                         onChange={e => setIdperson(e.target.value)} />
                 </div>
