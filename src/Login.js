@@ -33,7 +33,7 @@ function Login() {
                     setDatabaseError('Tunnus ja salasana eivät täsmää');
                 }
                 else {
-                    setDatabaseError('Login was successful');
+                    setDatabaseError('Login was successful!');
                     localStorage.setItem('idperson',id_person);
                     localStorage.setItem('password',password);
                 }

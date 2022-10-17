@@ -88,10 +88,10 @@ const SelectedPerson = (props) => {
 
     return (
         <div className="container">
-            <table className='table table-bordered'>
+            <table className='table table-bordered table-hover'>
                 <thead>
                     <tr className='table-info'>
-                        <th>Person Id</th><th>First Name</th><th>Last Name</th><th>City</th><th>Birth Year</th><th>Salary</th><th>Password</th><th></th>                        
+                        <th>Person Id</th><th>First Name</th><th>Last Name</th><th>City</th><th>Birth Year</th><th>Salary</th><th>Password</th><th>Update</th>                        
                     </tr>
                 </thead>
                     <tbody>

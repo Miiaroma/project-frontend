@@ -67,7 +67,7 @@ const DeleteProject = (props) => {
         <div className="container">
             <table className='table table-bordered'>
                 <thead>
-                    <tr>
+                    <tr className='table-info'>
                         <th>Project Id</th><th>Project Name</th><th>Place</th>
                     </tr>
                 </thead>
@@ -80,6 +80,7 @@ const DeleteProject = (props) => {
                 </tbody>
             </table>
             Do you really want to delete the project?
+            <br/>
             <br/>
             <button className='btn btn-danger' type="submit" onClick={handleSubmit}  disabled={loading}>Delete</button>
             &nbsp;

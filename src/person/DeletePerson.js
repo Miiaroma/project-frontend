@@ -85,7 +85,7 @@ const DeletePerson = (props) => {
         <div className="container">
             <table className='table table-bordered'>
                 <thead>
-                    <tr>
+                    <tr className='table-info'>
                     <th>Person Id</th><th>First Name</th><th>Last Name</th><th>City</th><th>Birth Year</th><th>Salary</th>                         
                     </tr>
                 </thead>
@@ -101,6 +101,7 @@ const DeletePerson = (props) => {
                 </tbody>
             </table>
             Do you really want to delete the person?
+            <br/>
             <br/>
             <button className='btn btn-danger' type="submit" onClick={handleSubmit}  disabled={loading}>Delete</button>
             &nbsp;

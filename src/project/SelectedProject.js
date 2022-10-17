@@ -73,7 +73,7 @@ const SelectedProject = (props) => {
             <table className='table table-bordered'>
                 <thead>
                     <tr className='table-info'>
-                        <th>Project Id</th><th>Project Name</th><th>Place</th><th></th>
+                        <th>Project Id</th><th>Project Name</th><th>Place</th><th>Update</th>
                     </tr>
                 </thead>
                 <tbody>

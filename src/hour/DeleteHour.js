@@ -71,7 +71,7 @@ const DeleteHour = (props) => {
         <div className="container">
             <table className='table table-bordered'>
                 <thead>
-                    <tr>
+                    <tr className='table-info'>
                         <th>Hour Id</th><th>Project Id</th><th>Person Id</th><th>Work Hours</th>                       
                     </tr>
                 </thead>
@@ -85,6 +85,7 @@ const DeleteHour = (props) => {
                 </tbody>
             </table>
             Do you really want to delete the hours?
+            <br/>
             <br/>
             <button className='btn btn-danger' type="submit" onClick={handleSubmit}  disabled={loading}>Delete</button>
             &nbsp;

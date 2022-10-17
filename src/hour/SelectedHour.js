@@ -77,7 +77,7 @@ const SelectedHour = (props) => {
             <table className='table table-bordered'>
                 <thead>
                     <tr className='table-info'>                        
-                        <th>Hour Id</th><th>Project Id</th><th>Person Id</th><th>Work Hours</th>
+                        <th>Hour Id</th><th>Project Id</th><th>Person Id</th><th>Work Hours</th><th>Update</th>
                     </tr>
                 </thead>
                 <tbody>
